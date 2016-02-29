@@ -23,8 +23,15 @@
 // Ensure that this import is commented out for now.
 import "phoenix"
 import React from "react"
-import Apps from "marathon/apps.jsx"
+import Marathon from "marathon/apps.jsx"
+import { Router, Route, Link } from 'react-router'
 
 const apps = {apps: []};
 
-React.render(<Apps {...apps} />, document.getElementById('main'));
+// React.render(<Apps {...apps} />, document.getElementById('main'));
+
+React.render((
+  <Router>
+    <Route path="/" component={Marathon}/>
+  </Router>
+), document.getElementById('main'));

@@ -17,7 +17,7 @@ class Apps extends React.Component {
         .then(response => response.json())
         .then(json => this.setState(json))
         .catch(ex => console.log('parsing failed', ex))
-    }, 5000);
+    }, 1000);
   }
 
   render() {

@@ -9,24 +9,23 @@
 
     <title>Mesoscope</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-    <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="http://blackrockdigital.github.io/startbootstrap-creative/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   </head>
 
   <body>
     <div class="navbar navbar-default navbar-fixed-top navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a href="../" class="navbar-brand">mesoscope</a>
-        </div>
-        <div class="navbar-collapse collapse" id="navbar-main">
-          <ul class="nav navbar-nav">
-
-          </ul>
-        </div>
+      <div class="navbar-header">
+        <a href="../" class="navbar-brand">mesoscope</a>
+      </div>
+      <div class="navbar-collapse collapse" id="navbar-main">
+        <ul class="nav navbar-nav">
+        </ul>
       </div>
     </div>
-    <div class="container">
+    <div class="container-fluid">
 
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
