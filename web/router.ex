@@ -17,7 +17,8 @@ defmodule Mesoscope.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/marathon", MarathonController, :apps
+    get "/marathon/apps", MarathonController, :apps
+    get "/marathon/apps/:id", MarathonController, :app_by_id
   end
 
   # Other scopes may use custom stacks.

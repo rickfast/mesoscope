@@ -13,7 +13,7 @@ class Apps extends React.Component {
 
   componentDidMount() {
     setInterval(() => {
-      fetch('/marathon')
+      fetch('/marathon/apps')
         .then(response => response.json())
         .then(json => this.setState(json))
         .catch(ex => console.log('parsing failed', ex))
@@ -22,7 +22,7 @@ class Apps extends React.Component {
 
   render() {
     return (
-      <table className="table">
+      <table className="table table-hover">
         <thead>
           <tr>
             <th>Name</th>
@@ -30,11 +30,12 @@ class Apps extends React.Component {
             <th>Memory</th>
             <th>Status</th>
             <th>Instances</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           {
-            this.state.apps.map(app => <App {...app} />)
+            this.state.apps.map(app => <App {...app} key={app.id}/>)
           }
         </tbody>
       </table>

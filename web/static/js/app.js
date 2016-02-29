@@ -21,17 +21,19 @@
 // import socket from "./socket"
 
 // Ensure that this import is commented out for now.
-import "phoenix"
-import React from "react"
-import Marathon from "marathon/apps.jsx"
-import { Router, Route, Link } from 'react-router'
+import "phoenix";
+import React from "react";
+import ReactDom from "react-dom";
+import Marathon from "marathon/marathon.jsx";
+import AppDetails from "marathon/app-details.jsx";
+import { Router, Route, hashHistory } from 'react-router';
 
 const apps = {apps: []};
 
-// React.render(<Apps {...apps} />, document.getElementById('main'));
-
-React.render((
-  <Router>
+ReactDom.render((
+  <Router history={hashHistory}>
     <Route path="/" component={Marathon}/>
+    <Route path="/apps" component={Marathon}/>
+    <Route path="/apps/:id" component={AppDetails}/>
   </Router>
 ), document.getElementById('main'));
