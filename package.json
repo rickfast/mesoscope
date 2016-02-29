@@ -6,7 +6,9 @@
   "repository": {},
   "dependencies": {
     "react": "^0.14.5",
-    "react-dom": "^0.14.5"
+    "react-dom": "^0.14.5",
+    "react-router": "^2.0.0",    
+    "whatwg-fetch": "^0.11.0 "
   },
   "devDependencies": {
     "babel-core": "^6.5.2",
@@ -18,8 +20,6 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "node-uuid": "^1.4.7",
     "radio": "^0.2.0",
-    "react-router": "^2.0.0",
-    "webpack": "^1.12.9",
-    "whatwg-fetch": "^0.11.0 "
+    "webpack": "^1.12.9"
   }
 }

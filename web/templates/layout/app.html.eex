@@ -7,23 +7,26 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello Mesoscope!</title>
+    <title>Mesoscope</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   </head>
 
   <body>
-    <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
-        </nav>
-        <span class="logo"></span>
-      </header>
+    <div class="navbar navbar-default navbar-fixed-top navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand">mesoscope</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
 
       <main role="main">
         <%= render @view_module, @view_template, assigns %>

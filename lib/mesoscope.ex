@@ -13,6 +13,7 @@ defmodule Mesoscope do
       supervisor(Mesoscope.Repo, []),
       # Here you could define other workers and supervisors as children
       # worker(Mesoscope.Worker, [arg1, arg2, arg3]),
+      worker(Mesoscope.Marathon, [])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

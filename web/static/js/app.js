@@ -22,5 +22,9 @@
 
 // Ensure that this import is commented out for now.
 import "phoenix"
+import React from "react"
+import Apps from "marathon/apps.jsx"
 
-alert('webpack compiled me.');
+const apps = {apps: []};
+
+React.render(<Apps {...apps} />, document.getElementById('main'));
