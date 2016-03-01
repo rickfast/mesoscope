@@ -9,6 +9,7 @@
 
     <title>Mesoscope</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <!-- <link rel="stylesheet" href="http://10.141.141.10:8080/ui/main.css"> -->
     <link rel="stylesheet" href="http://blackrockdigital.github.io/startbootstrap-creative/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>

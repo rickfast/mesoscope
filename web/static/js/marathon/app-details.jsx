@@ -20,14 +20,18 @@ class AppDetails extends React.Component {
   }
 
   render() {
+    const id = this.state.id ?
+      this.state.id.substr(1, this.state.id.length - 1) :
+      '';
+
     return (
       <div id="wrapper">
         <SideMenu />
         <div className="col-lg-6" style={{marginTop: "70px"}}>
-          <h4>Details</h4>
+          <h4>Details ({id})</h4>
           <div className="container-fluid xyz">
             <dl className="dl-horizontal">
-              <dt>ID</dt><DefinitionItem>{this.state.id}</DefinitionItem>
+              <dt>ID</dt><DefinitionItem>{id}</DefinitionItem>
               <dt>Command</dt><DefinitionItem>{this.state.cmd}</DefinitionItem>
               <dt>Arguments</dt><DefinitionItem>{this.state.args}</DefinitionItem>
               <dt>CPUs</dt><DefinitionItem>{this.state.cpus}</DefinitionItem>
@@ -35,6 +39,9 @@ class AppDetails extends React.Component {
               <dt>Command</dt><DefinitionItem>{this.state.cmd}</DefinitionItem>
               <dt>User</dt><DefinitionItem>{this.state.user}</DefinitionItem>
               <dt>Environment</dt><DefinitionItem><Env env={this.state.env} /></DefinitionItem>
+              <dt>Instances</dt><DefinitionItem>{this.state.instances}</DefinitionItem>
+              <dt>Disk</dt><DefinitionItem>{this.state.disk}</DefinitionItem>
+              <dt>Constraints</dt><DefinitionItem><Json>{this.state.constraints}</Json></DefinitionItem>
               <dt>Container</dt><DefinitionItem><Json>{this.state.container}</Json></DefinitionItem>
             </dl>
           </div>

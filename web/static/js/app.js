@@ -33,7 +33,7 @@ const apps = {apps: []};
 ReactDom.render((
   <Router history={hashHistory}>
     <Route path="/" component={Marathon}/>
-    <Route path="/apps" component={Marathon}/>
-    <Route path="/apps/:id" component={AppDetails}/>
+    <Route path="/marathon/apps" component={Marathon}/>
+    <Route path="/marathon/apps/:id" component={AppDetails}/>
   </Router>
 ), document.getElementById('main'));
