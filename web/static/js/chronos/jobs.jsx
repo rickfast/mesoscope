@@ -1,28 +1,23 @@
 import React from "react";
-import App from "./app.jsx";
+import Job from "./job.jsx";
 import "whatwg-fetch";
 
-class Apps extends React.Component {
+class Jobs extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      apps: []
+      jobs: []
     };
   }
 
   componentDidMount() {
-    fetch();
     setInterval(() => {
-      this.fetch();
+      fetch('/chronos/jobs')
+        .then(response => response.json())
+        .then(json => this.setState({jobs: json}))
+        .catch(ex => console.log('parsing failed', ex))
     }, 1000);
-  }
-
-  fetch() {
-    fetch('/marathon/apps')
-      .then(response => response.json())
-      .then(json => this.setState(json))
-      .catch(ex => console.log('parsing failed', ex));
   }
 
   render() {
@@ -33,14 +28,13 @@ class Apps extends React.Component {
             <th>Name</th>
             <th>CPU</th>
             <th>Memory</th>
-            <th>Status</th>
-            <th>Instances</th>
+            <th>State</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
           {
-            this.state.apps.map(app => <App {...app} key={app.id}/>)
+            this.state.jobs.map(job => <Job {...job} key={job.name}/>)
           }
         </tbody>
       </table>
@@ -48,4 +42,4 @@ class Apps extends React.Component {
   }
 }
 
-export default Apps;
+export default Jobs;

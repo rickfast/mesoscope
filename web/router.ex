@@ -14,15 +14,17 @@ defmodule Mesoscope.Router do
   end
 
   scope "/", Mesoscope do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :browser
 
     get "/", PageController, :index
-    get "/marathon/apps", MarathonController, :apps
-    get "/marathon/apps/:id", MarathonController, :app_by_id
+    get "/chronos/jobs", ChronosController, :jobs
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Mesoscope do
-  #   pipe_through :api
-  # end
+  scope "/marathon", Mesoscope do
+    pipe_through :api
+
+    get "/apps", MarathonController, :apps
+    get "/apps/:id", MarathonController, :app_by_id
+  end
+
 end

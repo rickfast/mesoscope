@@ -25,6 +25,7 @@ import "phoenix";
 import React from "react";
 import ReactDom from "react-dom";
 import Marathon from "marathon/marathon.jsx";
+import Chronos from "chronos/chronos.jsx";
 import AppDetails from "marathon/app-details.jsx";
 import { Router, Route, hashHistory } from 'react-router';
 
@@ -35,5 +36,6 @@ ReactDom.render((
     <Route path="/" component={Marathon}/>
     <Route path="/marathon/apps" component={Marathon}/>
     <Route path="/marathon/apps/:id" component={AppDetails}/>
+    <Route path="/chronos/jobs" component={Chronos}/>
   </Router>
 ), document.getElementById('main'));

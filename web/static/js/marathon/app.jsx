@@ -6,12 +6,13 @@ class App extends React.Component {
 
   render() {
     const id = this.props.id.substr(1, this.props.id.length - 1);
+    const instances = Number(this.props.instances);
 
     return (
       <tr>
         <td>{id}</td>
-        <td>{this.props.cpus}</td>
-        <td>{this.props.mem}</td>
+        <td>{(instances * this.props.cpus).toFixed(2)}</td>
+        <td>{instances * this.props.mem} MiB</td>
         <td><Status {...this.props} /></td>
         <td>{this.props.tasksRunning} of {this.props.instances}</td>
         <td>

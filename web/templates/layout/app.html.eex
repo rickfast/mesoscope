@@ -17,7 +17,8 @@
   </head>
 
   <body>
-    <div class="navbar navbar-default navbar-fixed-top navbar-static-top">
+    <img src="<%= static_path(@conn, "/assets/images/evac.png") %>"></img>
+      <div class="navbar navbar-default navbar-fixed-top navbar-static-top">
       <div class="navbar-header">
         <a href="../" class="navbar-brand">mesoscope</a>
       </div>

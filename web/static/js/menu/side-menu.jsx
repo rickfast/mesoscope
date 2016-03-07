@@ -11,7 +11,7 @@ class SideMenu extends React.Component {
                   <Link to="/marathon/apps"><span className="fa-stack fa-lg pull-left"></span>Marathon</Link>
               </li>
               <li>
-                  <a href="#"> <span className="fa-stack fa-lg pull-left"></span>Chronos</a>
+                  <Link to="/chronos/jobs"><span className="fa-stack fa-lg pull-left"></span>Chronos</Link>
               </li>
           </ul>
       </div>
