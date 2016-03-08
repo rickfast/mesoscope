@@ -12,7 +12,7 @@ class Apps extends React.Component {
   }
 
   componentDidMount() {
-    fetch();
+    this.fetch();
     setInterval(() => {
       this.fetch();
     }, 1000);

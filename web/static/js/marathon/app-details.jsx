@@ -43,6 +43,7 @@ class AppDetails extends React.Component {
               <dt>Disk</dt><DefinitionItem>{this.state.disk}</DefinitionItem>
               <dt>Constraints</dt><DefinitionItem><Json>{this.state.constraints}</Json></DefinitionItem>
               <dt>Container</dt><DefinitionItem><Json>{this.state.container}</Json></DefinitionItem>
+              <dt>Version</dt><DefinitionItem>{this.state.version}</DefinitionItem>
             </dl>
           </div>
         </div>

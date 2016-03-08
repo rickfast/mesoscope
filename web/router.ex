@@ -20,6 +20,12 @@ defmodule Mesoscope.Router do
     get "/chronos/jobs", ChronosController, :jobs
   end
 
+  scope "/config", Mesoscope do
+    pipe_through :api
+
+    get "/", ConfigController, :get_config
+  end
+
   scope "/marathon", Mesoscope do
     pipe_through :api
 
