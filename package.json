@@ -5,10 +5,16 @@
   "main": "index.js",
   "repository": {},
   "dependencies": {
+    "chart.js": "^1.0.2",
     "lodash": "^4.6.1",
     "react": "^0.14.5",
+    "react-chartjs": "^0.7.3",
+    "react-d3-basic": "^1.6.9",
     "react-dom": "^0.14.5",
+    "react-pathjs-chart": "^0.2.6",
+    "react-pie": "0.0.3",
     "react-router": "^2.0.0",
+    "react-simple-pie-chart": "^0.3.1",
     "whatwg-fetch": "^0.11.0 "
   },
   "devDependencies": {

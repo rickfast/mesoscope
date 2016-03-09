@@ -12,7 +12,7 @@ class Job extends React.Component {
         <td>{this.props.mem}</td>
         <td><Status {...this.props} /></td>
         <td>
-          <Link to={`/chronos/jobs/${this.props.name}`}>
+          <Link to={`/chronos/jobs/${this.props.name}`} state={this.props}>
             <span className="glyphicon glyphicon-search"/>
           </Link>
         </td>

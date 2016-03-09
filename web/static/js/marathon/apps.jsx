@@ -15,7 +15,7 @@ class Apps extends React.Component {
     this.fetch();
     setInterval(() => {
       this.fetch();
-    }, 1000);
+    }, 5000);
   }
 
   fetch() {

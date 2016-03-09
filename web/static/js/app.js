@@ -24,18 +24,21 @@
 import "phoenix";
 import React from "react";
 import ReactDom from "react-dom";
+import Mesos from "mesos/mesos.jsx";
 import Marathon from "marathon/marathon.jsx";
 import Chronos from "chronos/chronos.jsx";
 import AppDetails from "marathon/app-details.jsx";
+import JobDetails from "chronos/job-details.jsx";
 import { Router, Route, hashHistory } from 'react-router';
 
 const apps = {apps: []};
 
 ReactDom.render((
   <Router history={hashHistory}>
-    <Route path="/" component={Marathon}/>
+    <Route path="/" component={Mesos}/>
     <Route path="/marathon/apps" component={Marathon}/>
     <Route path="/marathon/apps/:id" component={AppDetails}/>
     <Route path="/chronos/jobs" component={Chronos}/>
+    <Route path="/chronos/jobs/:name" component={JobDetails}/>
   </Router>
 ), document.getElementById('main'));

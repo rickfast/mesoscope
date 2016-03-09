@@ -33,4 +33,10 @@ defmodule Mesoscope.Router do
     get "/apps/:id", MarathonController, :app_by_id
   end
 
+  scope "/mesos", Mesoscope do
+    pipe_through :api
+
+    get "/slaves", MesosController, :slaves
+  end
+
 end
