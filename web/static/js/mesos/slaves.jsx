@@ -26,7 +26,6 @@ class Slaves extends React.Component {
   render() {
     return (
       <div className="row col-lg-12">
-        <h2>Slaves</h2>
         {
           this.state.slaves.map(slave =>
             <Slave {...slave} key={slave.id} />
