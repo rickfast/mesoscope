@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+export MESOS_URL=10.141.141.10:5050
+export MARATHON_URL=10.141.141.10:8080
+export CHRONOS_URL=10.141.141.10:4400
