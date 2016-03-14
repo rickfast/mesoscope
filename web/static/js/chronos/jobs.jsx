@@ -1,5 +1,6 @@
 import React from "react";
 import Job from "./job.jsx";
+import Stores from "../store/stores.jsx";
 import "whatwg-fetch";
 
 class Jobs extends React.Component {
@@ -12,12 +13,8 @@ class Jobs extends React.Component {
   }
 
   componentDidMount() {
-    setInterval(() => {
-      fetch('/chronos/jobs')
-        .then(response => response.json())
-        .then(json => this.setState({jobs: json}))
-        .catch(ex => console.log('parsing failed', ex))
-    }, 1000);
+    Stores.pollHttp('/chronos/jobs')
+      .subscribe(jobs => this.setState({jobs: jobs}));
   }
 
   render() {

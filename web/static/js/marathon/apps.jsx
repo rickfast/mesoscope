@@ -1,5 +1,6 @@
 import React from "react";
 import App from "./app.jsx";
+import Stores from '../store/stores.jsx';
 import "whatwg-fetch";
 
 class Apps extends React.Component {
@@ -12,17 +13,8 @@ class Apps extends React.Component {
   }
 
   componentDidMount() {
-    this.fetch();
-    setInterval(() => {
-      this.fetch();
-    }, 5000);
-  }
-
-  fetch() {
-    fetch('/marathon/apps')
-      .then(response => response.json())
-      .then(json => this.setState(json))
-      .catch(ex => console.log('parsing failed', ex));
+    Stores.pollHttp('/marathon/apps')
+      .subscribe((apps) => this.setState(apps));
   }
 
   render() {

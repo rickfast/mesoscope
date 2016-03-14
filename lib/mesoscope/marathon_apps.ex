@@ -1,9 +1,5 @@
-defmodule Mesoscope.Marathon do
+defmodule Mesoscope.MarathonApps do
   use GenServer
-
-  def marathon_url() do
-    System.get_env("MARATHON_URL") || "10.141.141.10:8080"
-  end
 
   def start_link() do
     GenServer.start_link(__MODULE__, [%{}], name: :marathon)
@@ -29,7 +25,7 @@ defmodule Mesoscope.Marathon do
 
   def poll() do
     Process.send_after(:marathon, {:update_apps,
-      Poison.Parser.parse!(HTTPotion.get("#{marathon_url()}/v2/apps").body)},
+      Poison.Parser.parse!(HTTPotion.get("#{Config.marathon_url()}/v2/apps").body)},
       1000)
   end
 end
